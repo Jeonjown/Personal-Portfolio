@@ -1,3 +1,5 @@
+import profilePic from "../assets/1756895771971.png";
+
 const PersonalBackground = () => {
   return (
     <section className="flex flex-col items-center px-3 py-4  h-full">
@@ -13,7 +15,7 @@ const PersonalBackground = () => {
           <div className="flex justify-center">
             <div className="w-28 h-28 sm:w-32 sm:h-32 overflow-hidden rounded-xl shadow-md">
               <img
-                src="src/assets/1756895771971.JPG"
+                src={profilePic}
                 alt="Picture of myself"
                 className="w-full h-full object-cover"
               />

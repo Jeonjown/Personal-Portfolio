@@ -9,15 +9,17 @@ import AboutMe from "../pages/AboutMe";
 import PersonalBackground from "../pages/PersonalBackground";
 
 export default function Book() {
+  //resize for mobile
+  // jumping animartion
   return (
     <>
       <HTMLFlipBook
         width={300}
-        height={400}
+        height={500}
         size="stretch"
         minWidth={300}
         maxWidth={500}
-        minHeight={500}
+        minHeight={400}
         maxHeight={500}
         maxShadowOpacity={0.5}
         showCover={true}

@@ -11,7 +11,7 @@ function App() {
       </header>
 
       {/* Main container */}
-      <main className="flex-1 flex items-center justify-center bg-blue-950">
+      <main className="flex-1 flex items-center justify-center bg-blue-950 ">
         <Book />
       </main>
     </div>

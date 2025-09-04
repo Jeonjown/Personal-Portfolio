@@ -4,43 +4,48 @@ import Page from "./Page";
 import PageCover from "./PageCover";
 import TableOfContents from "../pages/TableOfContents";
 import Preface from "./Preface";
+import Cover from "../pages/Cover";
+import AboutMe from "../pages/AboutMe";
+import PersonalBackground from "../pages/PersonalBackground";
 
 export default function Book() {
   return (
-    <HTMLFlipBook
-      width={300}
-      height={400}
-      size="stretch"
-      minWidth={300}
-      maxWidth={500}
-      minHeight={500}
-      maxHeight={500}
-      maxShadowOpacity={0.5}
-      showCover={true}
-      mobileScrollSupport={true}
-      className="md:mx-0 mx-5 flex justify-center items-center"
-    >
-      {/* Cover page */}
-      <PageCover data-density="hard" className="!p-0">
-        <img
-          src="src/assets/BAT (4).png"
-          alt=""
-          className="object-fit w-full h-full"
-        />
-      </PageCover>
+    <>
+      <HTMLFlipBook
+        width={300}
+        height={400}
+        size="stretch"
+        minWidth={300}
+        maxWidth={500}
+        minHeight={500}
+        maxHeight={500}
+        maxShadowOpacity={0.5}
+        showCover={true}
+        mobileScrollSupport={true}
+        className="flex justify-center items-center  mx-10 relative"
+      >
+        {/* Cover page */}
+        <PageCover data-density="hard" className="!p-0">
+          <Cover />
+        </PageCover>
+        {/* Normal inner pages */}
+        <Page number="1">
+          <TableOfContents />
+        </Page>
+        <Page number="2">
+          <Preface />
+        </Page>
+        <Page number="3">
+          <AboutMe />
+        </Page>
+        <Page number="4">
+          <PersonalBackground />
+        </Page>
 
-      {/* Normal inner pages */}
-      <Page number="1">
-        <TableOfContents />
-      </Page>
-      <Page number="2">
-        <Preface />
-      </Page>
-      <Page number="3">Chapter 2</Page>
-
-      <Page number="4" data-density="hard">
+        {/* <Page number="4" data-density="hard">
         Back Cover
-      </Page>
-    </HTMLFlipBook>
+      </Page> */}
+      </HTMLFlipBook>
+    </>
   );
 }

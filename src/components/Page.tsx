@@ -5,10 +5,11 @@ interface PageProps {
   number: string;
   children: React.ReactNode;
   className?: string;
+  "data-density"?: "soft" | "hard";
 }
 
 const Page = React.forwardRef<HTMLDivElement, PageProps>(
-  ({ number, children, className }, ref) => {
+  ({ number, children, className, "data-density": density }, ref) => {
     const pageNumber = parseInt(number, 10);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -24,6 +25,7 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
     return (
       <div
         ref={ref}
+        data-density={density} // <-- forward the data-density here
         className={`
           ${className}
           relative
@@ -44,9 +46,9 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
           </div>
         )}
 
-        {/* Page content above sticky notes */}
+        {/* Page content */}
         <div className="prose flex flex-col h-full relative z-10 p-8 bg-[#fdfcf7]">
-          <div>{children}</div>
+          {children}
           <p className="text-xs text-gray-500 text-right mt-auto mx-auto">
             {number}
           </p>

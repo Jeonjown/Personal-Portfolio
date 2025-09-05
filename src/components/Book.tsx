@@ -19,10 +19,10 @@ export default function Book() {
       minHeight={580}
       maxHeight={600}
       size="stretch"
-      maxShadowOpacity={isMobile ? 0 : 0.5}
+      maxShadowOpacity={0.5}
       showCover={true}
       mobileScrollSupport={true}
-      className="flex justify-center items-center mx-5 "
+      className="mx-5 flex items-center justify-center"
     >
       {/* Cover page - make hard on mobile */}
       <PageCover data-density={"hard"} className="!p-0">

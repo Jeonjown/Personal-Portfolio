@@ -4,7 +4,7 @@ const Cover = () => {
     <img
       src={bookCover}
       alt="Book Cover"
-      className="object-cover w-full h-full"
+      className="h-full w-full object-cover"
     />
   );
 };

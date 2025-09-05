@@ -24,7 +24,7 @@ const TableOfContents = () => {
 
   return (
     <div className="prose max-w-none">
-      <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
+      <h2 className="mb-4 text-xl font-bold">Table of Contents</h2>
       <ul className="space-y-2">
         {contents.map((item, index) => {
           const isChapter =
@@ -38,10 +38,12 @@ const TableOfContents = () => {
               className={`flex items-center ${isChapter ? "" : "pl-6"}`}
             >
               {/* Title */}
-              <span className="whitespace-nowrap">{item.title}</span>
+              <span className="md:text-md text-sm whitespace-nowrap">
+                {item.title}
+              </span>
 
               {/* Dotted line that stretches */}
-              <span className="flex-1 border-b border-dotted border-gray-400 mx-2"></span>
+              <span className="mx-2 flex-1 border-b border-dotted border-gray-400"></span>
 
               {/* Page number */}
               <span className="text-gray-600">{item.page}</span>

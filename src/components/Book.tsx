@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 import PageCover from "./PageCover";
 import Page from "./Page";
@@ -8,18 +8,6 @@ import Preface from "./Preface";
 import AboutMe from "../pages/AboutMe";
 import PersonalBackground from "../pages/PersonalBackground";
 
-// Type-safe interface for the FlipBook instance
-interface FlipBookInstance {
-  flipNext(): void;
-  flipPrev(): void;
-  flip(page: number): void;
-  getCurrentPageIndex(): number;
-  getPageCount(): number;
-  onFlip(callback: () => void): void;
-  offFlip(callback: () => void): void;
-}
-
-// Pages structure
 interface BookPage {
   id: number;
   content: React.ReactNode;
@@ -28,9 +16,8 @@ interface BookPage {
 export default function Book() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const flipBookRef = useRef<FlipBookInstance | null>(null);
 
-  // Detect mobile screen
+  // Detect mobile
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 700);
     handleResize();
@@ -46,20 +33,10 @@ export default function Book() {
     { id: 4, content: <PersonalBackground /> },
   ];
 
-  // Subscribe to flip events
-  useEffect(() => {
-    const book = flipBookRef.current;
-    if (!book) return;
-
-    const onFlip = () => setCurrentPage(book.getCurrentPageIndex());
-    book.onFlip(onFlip);
-
-    return () => book.offFlip(onFlip);
-  }, []);
+  const handleFlip = (e: number) => setCurrentPage(e);
 
   return (
     <HTMLFlipBook
-      ref={flipBookRef as React.Ref<HTMLDivElement>} // cast for TS
       width={350}
       minWidth={350}
       maxWidth={450}
@@ -67,17 +44,19 @@ export default function Book() {
       minHeight={580}
       maxHeight={600}
       size="stretch"
-      maxShadowOpacity={isMobile ? 0 : 0.5} // remove shadows on mobile
+      maxShadowOpacity={isMobile ? 0 : 0.5}
       showCover={true}
       mobileScrollSupport={true}
-      flippingTime={isMobile ? 400 : 800} // faster on mobile
+      flippingTime={isMobile ? 400 : 800}
       className="flex justify-center items-center mx-5"
+      // @ts-expect-error TypeScript does not recognize onFlip prop
+      onFlip={handleFlip}
     >
       {pages.map((page) => {
         const isNearCurrent = Math.abs(currentPage - page.id) <= 1;
 
-        // Cover page is always hard
         if (page.id === 0) {
+          // Cover page is always hard
           return (
             <PageCover key={page.id} data-density="hard" className="!p-0">
               {page.content}
@@ -86,12 +65,8 @@ export default function Book() {
         }
 
         return (
-          <Page
-            key={page.id}
-            number={page.id.toString()}
-            data-density={isMobile ? "hard" : "soft"} // soft on desktop
-          >
-            {/* Lazy render pages for performance */}
+          <Page key={page.id} number={page.id.toString()}>
+            {/* Lazy render only on mobile */}
             {isMobile ? (isNearCurrent ? page.content : null) : page.content}
           </Page>
         );

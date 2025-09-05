@@ -6,6 +6,8 @@ import TableOfContents from "../pages/TableOfContents";
 import Preface from "./Preface";
 import AboutMe from "../pages/AboutMe";
 import PersonalBackground from "../pages/PersonalBackground";
+import Skills from "../pages/Skills";
+import Projects from "../pages/Projects";
 
 export default function Book() {
   const isMobile = window.innerWidth < 700;
@@ -41,6 +43,12 @@ export default function Book() {
       </Page>
       <Page number="4" data-density={isMobile ? "hard" : "soft"}>
         <PersonalBackground />
+      </Page>
+      <Page number="5" data-density={isMobile ? "hard" : "soft"}>
+        <Skills />
+      </Page>
+      <Page number="6" data-density={isMobile ? "hard" : "soft"}>
+        <Projects />
       </Page>
     </HTMLFlipBook>
   );

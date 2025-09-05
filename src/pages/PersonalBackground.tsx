@@ -1,4 +1,4 @@
-import profilePic from "../assets/1756895771971.png";
+import profilePic from "../assets/sketch.png";
 
 const PersonalBackground = () => {
   return (
@@ -11,7 +11,7 @@ const PersonalBackground = () => {
 
         {/* Profile Image */}
         <div className="flex justify-center">
-          <div className="h-28 w-28 overflow-hidden sm:h-32 sm:w-32 lg:h-36 lg:w-36">
+          <div className="h-50 w-50 overflow-hidden">
             <img
               src={profilePic}
               alt="Profile"
@@ -27,13 +27,13 @@ const PersonalBackground = () => {
             <p className="text-lg font-bold sm:text-xl lg:text-2xl">
               ALAN B. MANABAT JR.
             </p>
-            <p className="text-sm text-gray-600 sm:text-base lg:text-lg">
+            <p className="text-md text-gray-600">
               <span className="italic">“BATS”</span>
             </p>
           </div>
 
           {/* Education */}
-          <p className="text-md leading-relaxed sm:text-base lg:text-lg">
+          <p className="text-lg leading-relaxed">
             Graduated <span className="font-semibold">Cum Laude</span> from{" "}
             <span className="font-semibold">
               Rizal Technological University
@@ -42,14 +42,8 @@ const PersonalBackground = () => {
             <span className="font-semibold">1.44</span>).
           </p>
 
-          {/* Skills / Specialty */}
-          <p className="text-md leading-relaxed sm:text-base lg:text-lg">
-            Specialized in building modern JavaScript applications with a strong
-            focus on performance, SEO, and seamless user experiences.
-          </p>
-
           {/* Quote */}
-          <p className="text-md leading-relaxed text-gray-700 italic sm:text-base lg:text-lg">
+          <p className="text-lg leading-relaxed text-gray-700 italic">
             “I enjoy solving problems, tackling complex challenges, and turning
             ideas into user-friendly applications.”
           </p>

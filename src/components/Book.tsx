@@ -14,15 +14,15 @@ export default function Book() {
     <HTMLFlipBook
       width={350}
       minWidth={350}
-      maxWidth={500}
-      height={550}
-      minHeight={550}
-      maxHeight={550}
+      maxWidth={450}
+      height={580}
+      minHeight={580}
+      maxHeight={600}
       size="stretch"
       maxShadowOpacity={isMobile ? 0 : 0.5}
       showCover={true}
       mobileScrollSupport={true}
-      className="flex justify-center items-center mx-10 "
+      className="flex justify-center items-center mx-5 "
     >
       {/* Cover page - make hard on mobile */}
       <PageCover data-density={isMobile ? "hard" : "hard"} className="!p-0">

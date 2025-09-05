@@ -25,21 +25,21 @@ export default function Book() {
       className="flex justify-center items-center mx-5 "
     >
       {/* Cover page - make hard on mobile */}
-      <PageCover data-density={isMobile ? "hard" : "hard"} className="!p-0">
+      <PageCover data-density={"hard"} className="!p-0">
         <Cover />
       </PageCover>
 
       {/* Inner pages - set density based on mobile */}
-      <Page number="1" data-density={isMobile ? "hard" : "soft"}>
+      <Page number="1">
         <TableOfContents />
       </Page>
-      <Page number="2" data-density={isMobile ? "hard" : "soft"}>
+      <Page number="2">
         <Preface />
       </Page>
-      <Page number="3" data-density={isMobile ? "hard" : "soft"}>
+      <Page number="3">
         <AboutMe />
       </Page>
-      <Page number="4" data-density={isMobile ? "hard" : "soft"}>
+      <Page number="4">
         <PersonalBackground />
       </Page>
     </HTMLFlipBook>

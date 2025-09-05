@@ -9,22 +9,22 @@ import AboutMe from "../pages/AboutMe";
 import PersonalBackground from "../pages/PersonalBackground";
 
 export default function Book() {
-  //resize for mobile
-  // jumping animartion
+  const isMobile = window.innerWidth < 700;
+
   return (
     <>
       <HTMLFlipBook
-        width={300}
-        height={500}
-        size="stretch"
-        minWidth={300}
+        width={350}
+        minWidth={350}
         maxWidth={500}
-        minHeight={400}
-        maxHeight={500}
-        maxShadowOpacity={0.5}
+        height={550}
+        minHeight={550}
+        maxHeight={550}
+        size="stretch"
+        maxShadowOpacity={isMobile ? 0 : 0.5}
         showCover={true}
         mobileScrollSupport={true}
-        className="flex justify-center items-center  mx-10 relative"
+        className="flex justify-center items-center mx-5"
       >
         {/* Cover page */}
         <PageCover data-density="hard" className="!p-0">

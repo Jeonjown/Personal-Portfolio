@@ -22,6 +22,7 @@ export default function Book() {
       maxShadowOpacity={isMobile ? 0 : 0.5}
       showCover={true}
       mobileScrollSupport={true}
+      flippingTime={isMobile ? 500 : 1000}
       className="flex justify-center items-center mx-5 "
     >
       {/* Cover page - make hard on mobile */}

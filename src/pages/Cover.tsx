@@ -1,4 +1,4 @@
-import bookCover from "../assets/BAT (4).png";
+import bookCover from "../assets/book-cover.png";
 const Cover = () => {
   return (
     <img

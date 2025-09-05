@@ -1,3 +1,4 @@
+// Page.tsx
 import React, { useEffect, useState } from "react";
 import StickyNotes from "./StickyNotes";
 
@@ -25,21 +26,14 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
     return (
       <div
         ref={ref}
-        data-density={density} // <-- forward the data-density here
-        className={`
-          ${className}
-          relative
-          bg-[#fdfcf7]
-          border
-          border-gray-200
-          shadow-[inset_0_4px_8px_rgba(0,0,0,0.1),inset_0_-4px_8px_rgba(0,0,0,0.05)]
-          rounded-sm
-          overflow-visible
-        `}
+        data-density={density} // forward density
+        className={`${
+          className ?? ""
+        } relative bg-[#fdfcf7] border border-gray-200 rounded-sm overflow-visible shadow-none`}
       >
         {/* Sticky notes behind the page */}
         {showStickyNotes && (
-          <div className="absolute -top-15 -right-0 flex space-x-2 -z-10">
+          <div className="absolute -top-15 -right-0 flex space-x-2 -z-10 pointer-events-none">
             <StickyNotes />
             <StickyNotes />
             <StickyNotes />

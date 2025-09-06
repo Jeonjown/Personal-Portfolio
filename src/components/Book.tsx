@@ -9,6 +9,8 @@ import PersonalBackground from "../pages/PersonalBackground";
 import Skills from "../pages/Skills";
 import Projects from "../pages/Projects";
 import ProjectOne from "../pages/ProjectOne";
+import ProjectTwo from "../pages/ProjectTwo";
+import ProjectThree from "../pages/ProjectThree";
 
 export default function Book() {
   const isMobile = window.innerWidth < 700;
@@ -51,8 +53,14 @@ export default function Book() {
       <Page number="6" data-density={isMobile ? "hard" : "soft"}>
         <Projects />
       </Page>
-      <Page number="6" data-density={isMobile ? "hard" : "soft"}>
+      <Page number="7" data-density={isMobile ? "hard" : "soft"}>
         <ProjectOne />
+      </Page>
+      <Page number="8" data-density={isMobile ? "hard" : "soft"}>
+        <ProjectTwo />
+      </Page>
+      <Page number="9" data-density={isMobile ? "hard" : "soft"}>
+        <ProjectThree />
       </Page>
     </HTMLFlipBook>
   );

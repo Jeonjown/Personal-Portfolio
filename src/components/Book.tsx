@@ -11,6 +11,8 @@ import Projects from "../pages/Projects";
 import ProjectOne from "../pages/ProjectOne";
 import ProjectTwo from "../pages/ProjectTwo";
 import ProjectThree from "../pages/ProjectThree";
+import CareerHiglights from "../pages/CareerHighlights";
+import Experience from "../pages/Experience";
 
 export default function Book() {
   const isMobile = window.innerWidth < 700;
@@ -61,6 +63,12 @@ export default function Book() {
       </Page>
       <Page number="9" data-density={isMobile ? "hard" : "soft"}>
         <ProjectThree />
+      </Page>
+      <Page number="10" data-density={isMobile ? "hard" : "soft"}>
+        <CareerHiglights />
+      </Page>
+      <Page number="11" data-density={isMobile ? "hard" : "soft"}>
+        <Experience />
       </Page>
     </HTMLFlipBook>
   );

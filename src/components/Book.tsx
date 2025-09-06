@@ -18,8 +18,8 @@ export default function Book() {
       width={350}
       minWidth={350}
       maxWidth={450}
-      height={580}
-      minHeight={580}
+      height={600}
+      minHeight={550}
       maxHeight={600}
       size="stretch"
       maxShadowOpacity={0.5}

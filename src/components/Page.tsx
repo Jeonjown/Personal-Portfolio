@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
 import StickyNotesList from "./StickyNotesList";
+import { useIsMobile } from "../hooks/useIsMobile";
+import React from "react";
 
 interface PageProps {
   number: string;
@@ -11,14 +12,8 @@ interface PageProps {
 const Page = React.forwardRef<HTMLDivElement, PageProps>(
   ({ number, children, className, "data-density": density }, ref) => {
     const pageNumber = parseInt(number, 10);
-    const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-      const handleResize = () => setIsMobile(window.innerWidth < 700);
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const isMobile = useIsMobile(700);
 
     const showStickyNotes = isMobile || pageNumber % 2 === 0;
 

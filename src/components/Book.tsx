@@ -18,6 +18,7 @@ import Experience from "../pages/Experience";
 import End from "../pages/End";
 import { FlipBookContext } from "../contexts/FlipBookContext";
 import BackCover from "./BackCover";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 interface FlipBookAPI {
   pageFlip: () => {
@@ -28,7 +29,7 @@ interface FlipBookAPI {
 }
 
 export default function Book() {
-  const isMobile = window.innerWidth < 700;
+  const isMobile = useIsMobile(700);
 
   const bookRef = useRef<FlipBookAPI | null>(null);
 
@@ -42,7 +43,11 @@ export default function Book() {
 
   return (
     <>
-      <FlipBookContext.Provider value={{ goToPage }}>
+      <FlipBookContext.Provider
+        value={{
+          goToPage,
+        }}
+      >
         <HTMLFlipBook
           ref={bookRef as unknown as React.Ref<HTMLDivElement>}
           width={350}
@@ -54,7 +59,7 @@ export default function Book() {
           size="stretch"
           maxShadowOpacity={0.5}
           showCover={true}
-          mobileScrollSupport={true}
+          mobileScrollSupport={false}
           clickEventForward={true}
           swipeDistance={100}
           useMouseEvents={true}
@@ -65,7 +70,7 @@ export default function Book() {
           </PageCover>
 
           <Page number="1" data-density={isMobile ? "hard" : "soft"}>
-            <TableOfContents goToPage={goToPage} isMobile={isMobile} />
+            <TableOfContents isMobile={isMobile} />
           </Page>
 
           <Page number="2" data-density={isMobile ? "hard" : "soft"}>

@@ -1,9 +1,12 @@
+import { useFlipBook } from "../contexts/FlipBookContext";
+
 interface TOCProps {
-  goToPage: (pageNum: number) => void;
   isMobile: boolean;
 }
 
-const TableOfContents = ({ goToPage, isMobile }: TOCProps) => {
+const TableOfContents = ({ isMobile }: TOCProps) => {
+  const { goToPage } = useFlipBook();
+
   const contents = [
     { title: "Preface", page: 2, indexMobile: 3, indexDesktop: 3 },
     { title: "Chapter I: About Me", page: 3, indexMobile: 4, indexDesktop: 5 },
@@ -44,7 +47,7 @@ const TableOfContents = ({ goToPage, isMobile }: TOCProps) => {
   ];
 
   return (
-    <div className="prose max-w-none">
+    <div className="prose relative max-w-none">
       <h2 className="mb-4 text-xl font-bold">Table of Contents</h2>
       <ul className="space-y-2">
         {contents.map((item, idx) => {
@@ -64,7 +67,7 @@ const TableOfContents = ({ goToPage, isMobile }: TOCProps) => {
               }`}
             >
               <span
-                className={`sm:text-md relative cursor-pointer bg-yellow-200 px-2 text-sm whitespace-nowrap`}
+                className="sm:text-md cursor-pointer bg-yellow-200 px-2 text-sm whitespace-nowrap"
                 onClick={() => goToPage(flipIndex)}
               >
                 {item.title}
@@ -75,6 +78,11 @@ const TableOfContents = ({ goToPage, isMobile }: TOCProps) => {
           );
         })}
       </ul>
+
+      {/* Invisible hitbox that blocks clicks on left/right 40% of the page */}
+      <div className="absolute inset-0">
+        <div className="pointer-events-auto absolute top-0 right-0 z-50 h-full w-[60%]"></div>
+      </div>
     </div>
   );
 };

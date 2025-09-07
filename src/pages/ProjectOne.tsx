@@ -16,7 +16,7 @@ const ProjectOne = () => {
       <div className="w-full space-y-6">
         {/* Title */}
         <h3 className="text-center text-base font-semibold tracking-wide underline underline-offset-4 sm:text-lg">
-          Project One: Triple Z Event Reservation System
+          Triple Z Event Reservation System
         </h3>
 
         {/* Polaroid Photo Frame */}

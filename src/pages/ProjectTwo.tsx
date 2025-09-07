@@ -16,7 +16,7 @@ const ProjectTwo = () => {
       <div className="w-full space-y-6">
         {/* Title */}
         <h3 className="text-center text-base font-semibold tracking-wide underline underline-offset-4 sm:text-lg">
-          Project Two: Epub File Reader Online Tool
+          Epub File Reader Online Tool
         </h3>
 
         {/* Polaroid Photo Frame */}

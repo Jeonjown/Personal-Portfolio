@@ -15,8 +15,8 @@ const ProjectThree = () => {
     <section className="flex h-full flex-col items-center">
       <div className="w-full space-y-6">
         {/* Title */}
-        <h3 className="text-center text-base font-semibold tracking-wide underline underline-offset-4 sm:text-lg">
-          Project Three: TechHaven Online Retail Platform
+        <h3 className="sm:text-md text-center text-base font-semibold tracking-wide underline underline-offset-4">
+          TechHaven Online Retail Platform
         </h3>
 
         {/* Polaroid Photo Frame */}

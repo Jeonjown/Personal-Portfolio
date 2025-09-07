@@ -1,13 +1,13 @@
-import React from "react";
-
 interface StickyNotesProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-const StickyNotes = ({ children, className }: StickyNotesProps) => {
+const StickyNotes = ({ children, className, onClick }: StickyNotesProps) => {
   return (
     <div
+      onClick={onClick}
       className={`-z-10 flex h-10 w-15 items-center justify-center bg-yellow-100 shadow-inner md:h-15 md:w-20 ${
         className ?? ""
       }`}

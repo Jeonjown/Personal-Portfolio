@@ -11,12 +11,12 @@ const PageCover = React.forwardRef<HTMLDivElement, PageCoverProps>(
       <div
         ref={ref}
         data-density="hard"
-        className={`relative w-full h-full overflow-hidden ${className}`}
+        className={`relative h-full w-full overflow-hidden ${className}`}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
 export default PageCover;

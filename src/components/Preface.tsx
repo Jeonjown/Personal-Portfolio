@@ -1,8 +1,8 @@
 const Preface = () => {
   return (
-    <section className="flex items-center justify-center h-[50vh] ">
-      <div className="max-w-2xl text-center space-y-4">
-        <h2 className="text-3xl font-semibold  underline-offset-8 underline">
+    <section className="flex h-[50vh] items-center justify-center">
+      <div className="max-w-2xl space-y-4 text-center">
+        <h2 className="text-3xl font-semibold underline underline-offset-8">
           P R E F A C E.
         </h2>
         <p className="text-lg leading-relaxed text-gray-700">

@@ -24,7 +24,9 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
         className={`/* outer soft */ relative overflow-visible rounded-md border border-gray-200 bg-[#fdfcf7] shadow-[0_4px_10px_rgba(0,0,0,0.15)] before:absolute before:inset-0 before:rounded-md before:shadow-inner before:content-[''] ${className ?? ""}`}
       >
         {/* Sticky notes behind the page */}
-        {showStickyNotes && <StickyNotesList currentPage={pageNumber} />}
+        {showStickyNotes && (
+          <StickyNotesList currentPage={pageNumber} isMobile={isMobile} />
+        )}
 
         {/* Page content */}
         <div className="prose relative z-10 flex h-full flex-col rounded bg-[#fdfcf7] p-8 text-gray-800">

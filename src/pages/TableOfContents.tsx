@@ -25,13 +25,13 @@ const TableOfContents = ({ isMobile }: TOCProps) => {
       indexDesktop: 9,
     },
     {
-      title: "Epub File - Reader Online Tool",
+      title: "Epub File - Online Reader Tool",
       page: 8,
       indexMobile: 9,
       indexDesktop: 9,
     },
     {
-      title: "TechHaven - Online Retail Platform",
+      title: "TechHaven - Ecommerce Platform",
       page: 9,
       indexMobile: 10,
       indexDesktop: 11,

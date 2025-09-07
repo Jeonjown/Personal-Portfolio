@@ -8,7 +8,7 @@ const StickyNotes = ({ children, className, onClick }: StickyNotesProps) => {
   return (
     <div
       onClick={onClick}
-      className={`-z-10 flex h-10 w-15 items-center justify-center bg-yellow-100 shadow-inner md:h-15 md:w-20 ${
+      className={`-z-10 flex h-10 w-15 items-center justify-center bg-yellow-100 px-2 text-center shadow-inner md:h-15 md:w-20 ${
         className ?? ""
       }`}
     >

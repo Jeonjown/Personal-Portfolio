@@ -2,7 +2,6 @@ import { CiLinkedin, CiMail } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
 import { MdLocationOn } from "react-icons/md";
 import ryzamae from "../assets/ryzamae.png";
-import resume from "../assets/resume.pdf";
 import profilePic from "../assets/sketch.png";
 
 const PersonalBackground = () => {
@@ -52,8 +51,8 @@ const PersonalBackground = () => {
 
           {/* Actions: Resume + Socials */}
           <div className="mt-5 flex items-center justify-center space-x-3">
-            <a href={resume} target="_blank" rel="noopener noreferrer">
-              <button className="flex cursor-pointer items-center space-x-1 rounded border px-3 py-1 text-xs font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="flex items-center space-x-1 rounded border px-3 py-1 text-xs font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow">
                 <img src={ryzamae} alt="" className="h-3" />
                 <span>Resume</span>
               </button>

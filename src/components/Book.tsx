@@ -61,7 +61,6 @@ export default function Book() {
           showCover={true}
           mobileScrollSupport={false}
           clickEventForward={true}
-          swipeDistance={100}
           useMouseEvents={true}
           className="mx-5 flex items-center justify-center"
         >

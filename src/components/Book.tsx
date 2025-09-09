@@ -19,7 +19,6 @@ import End from "../pages/End";
 import { FlipBookContext } from "../contexts/FlipBookContext";
 import BackCover from "./BackCover";
 import { useIsMobile } from "../hooks/useIsMobile";
-import useMode from "../hooks/useMode";
 
 interface FlipBookAPI {
   pageFlip: () => {

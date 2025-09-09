@@ -7,7 +7,7 @@ const Switch = () => {
     <div className="font-gloria flex items-center space-x-3">
       {/* Mode Text */}
       {mode ? (
-        <p className="font-sans text-sm">website mode </p>
+        <p className="font-mono text-sm">website mode </p>
       ) : (
         <p className="font-gloria text-sm">journal mode</p>
       )}

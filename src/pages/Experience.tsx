@@ -1,6 +1,6 @@
 const Experience = () => {
   return (
-    <section className="flex h-full flex-col items-center">
+    <div className="flex h-full flex-col items-center">
       <div className="w-full space-y-6">
         {/* Title */}
         <h3 className="text-center text-sm font-semibold tracking-wide underline underline-offset-4 sm:text-base lg:text-xl">
@@ -83,7 +83,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

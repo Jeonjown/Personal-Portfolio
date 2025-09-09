@@ -90,7 +90,7 @@ const PersonalBackground = () => {
           </p>
 
           {/* Education */}
-          <div className="mt-8 space-y-3 text-left">
+          <div className="mt-2 space-y-3 text-left md:mt-8">
             <h4 className="text-base font-semibold underline underline-offset-2 sm:text-lg lg:text-xl">
               Education
             </h4>

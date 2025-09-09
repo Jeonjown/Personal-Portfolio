@@ -50,12 +50,12 @@ export default function Book() {
       >
         <HTMLFlipBook
           ref={bookRef as unknown as React.Ref<HTMLDivElement>}
-          width={350}
-          minWidth={350}
-          maxWidth={450}
-          height={600}
+          width={370}
+          minWidth={370}
+          maxWidth={470}
+          height={550}
           minHeight={550}
-          maxHeight={600}
+          maxHeight={550}
           size="stretch"
           maxShadowOpacity={0.5}
           showCover={true}

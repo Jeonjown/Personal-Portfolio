@@ -29,7 +29,7 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
         )}
 
         {/* Page content */}
-        <div className="prose relative z-10 flex h-full flex-col rounded bg-[#fdfcf7] p-8 text-gray-800">
+        <div className="prose relative z-10 flex h-full flex-col rounded bg-[#fdfcf7] px-8 py-4 text-gray-800">
           {children}
           <p className="mx-auto mt-auto text-right text-xs text-gray-500">
             {number}

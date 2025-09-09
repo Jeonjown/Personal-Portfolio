@@ -16,7 +16,7 @@ const Switch = () => {
       <div
         onClick={() => setMode(!mode)}
         className={`relative flex h-6 w-12 cursor-pointer items-center rounded-full p-1 transition-colors duration-300 ${
-          mode ? "bg-green-500" : "bg-gray-300"
+          mode ? "bg-gray-300" : "bg-gray-500"
         }`}
       >
         <div

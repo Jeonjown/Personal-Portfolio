@@ -39,9 +39,13 @@ export default function Book() {
     const currentBook = bookRef.current;
 
     return () => {
-      if (currentBook) {
-        const pf = currentBook.pageFlip();
-        if (pf.destroy) pf.destroy();
+      if (!currentBook) return;
+
+      const pf = currentBook.pageFlip?.();
+
+      // Only call destroy if it exists
+      if (pf?.destroy) {
+        pf.destroy();
       }
     };
   }, []);

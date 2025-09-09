@@ -1,5 +1,4 @@
-// src/components/Book.tsx
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
 import PageCover from "./PageCover";
 import Page from "./Page";
@@ -26,6 +25,7 @@ interface FlipBookAPI {
     flip: (pageNumber: number, corner?: "top" | "bottom") => void;
     getPageCount: () => number;
     getCurrentPageIndex: () => number;
+    destroy: () => void;
   };
 }
 
@@ -34,6 +34,17 @@ export default function Book() {
   const { mode } = useMode();
 
   const bookRef = useRef<FlipBookAPI | null>(null);
+
+  useEffect(() => {
+    const currentBook = bookRef.current;
+
+    return () => {
+      if (currentBook) {
+        const pf = currentBook.pageFlip();
+        if (pf.destroy) pf.destroy();
+      }
+    };
+  }, []);
 
   const goToPage = (index: number) => {
     if (!bookRef.current) return;

@@ -31,8 +31,6 @@ interface FlipBookAPI {
 
 export default function Book() {
   const isMobile = useIsMobile(700);
-  const { mode } = useMode();
-
   const bookRef = useRef<FlipBookAPI | null>(null);
 
   const goToPage = (index: number) => {
@@ -61,7 +59,7 @@ export default function Book() {
           size="stretch"
           maxShadowOpacity={0.5}
           showCover={true}
-          mobileScrollSupport={!mode}
+          mobileScrollSupport={true}
           clickEventForward={true}
           useMouseEvents={true}
           className="mx-5 flex items-center justify-center"

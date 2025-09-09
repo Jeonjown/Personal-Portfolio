@@ -1,4 +1,5 @@
 import { useFlipBook } from "../contexts/FlipBookContext";
+import useMode from "../hooks/useMode";
 
 interface TOCProps {
   isMobile: boolean;
@@ -6,6 +7,7 @@ interface TOCProps {
 
 const TableOfContents = ({ isMobile }: TOCProps) => {
   const { goToPage } = useFlipBook();
+  const { mode } = useMode();
 
   const contents = [
     { title: "Preface", page: 2, indexMobile: 3, indexDesktop: 3 },
@@ -80,8 +82,10 @@ const TableOfContents = ({ isMobile }: TOCProps) => {
       </ul>
 
       {/* Invisible hitbox that blocks clicks on left/right 40% of the page */}
-      <div className="absolute inset-0">
-        <div className="pointer-events-auto absolute top-0 right-0 z-50 h-full w-[60%]"></div>
+      <div
+        className={`absolute inset-0 ${!mode ? "pointer-events-auto" : "pointer-events-none"}`}
+      >
+        <div className="absolute top-0 right-0 z-50 h-full w-[60%]"></div>
       </div>
     </div>
   );

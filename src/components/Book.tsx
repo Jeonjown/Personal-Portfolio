@@ -59,7 +59,7 @@ export default function Book() {
           size="stretch"
           maxShadowOpacity={0.5}
           showCover={true}
-          mobileScrollSupport={true}
+          mobileScrollSupport={false}
           clickEventForward={true}
           swipeDistance={100}
           useMouseEvents={true}

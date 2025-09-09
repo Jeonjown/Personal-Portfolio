@@ -19,6 +19,7 @@ import End from "../pages/End";
 import { FlipBookContext } from "../contexts/FlipBookContext";
 import BackCover from "./BackCover";
 import { useIsMobile } from "../hooks/useIsMobile";
+import useMode from "../hooks/useMode";
 
 interface FlipBookAPI {
   pageFlip: () => {
@@ -30,6 +31,7 @@ interface FlipBookAPI {
 
 export default function Book() {
   const isMobile = useIsMobile(700);
+  const { mode } = useMode();
 
   const bookRef = useRef<FlipBookAPI | null>(null);
 
@@ -59,7 +61,7 @@ export default function Book() {
           size="stretch"
           maxShadowOpacity={0.5}
           showCover={true}
-          mobileScrollSupport={true}
+          mobileScrollSupport={!mode}
           clickEventForward={true}
           useMouseEvents={true}
           className="mx-5 flex items-center justify-center"

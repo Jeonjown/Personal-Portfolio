@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import thumbnail from "../assets/project-one-thumbnail.jpg";
 import thumbtacks from "../assets/thumbtacks.png";
 import { SiReact, SiNodedotjs, SiExpress, SiMongodb } from "react-icons/si";
+import ProjectTooltip from "../components/ProjectTooltip";
 
 const ProjectOne = () => {
   const techStack = [
@@ -69,7 +70,13 @@ const ProjectOne = () => {
               className="underline underline-offset-2 hover:text-blue-800"
               whileHover={{ scale: 1.1, rotate: 2 }}
             >
-              Live Demo
+              <ProjectTooltip
+                text="⚠️ Please note: The app runs on a free-tier server, so initial load may take a few seconds."
+                className="underline"
+                position="top"
+              >
+                Live Demo
+              </ProjectTooltip>
             </motion.a>
           </div>
         </motion.div>
